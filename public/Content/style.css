@@ -254,6 +254,49 @@ form{
     background-color: #da5f5f;
 }
 
+/******************login*************************/
+.login{
+  float: center;
+  color: #e7cbf3;
+  text-align: center;
+  padding: 5px;
+  text-decoration:none;
+  font-size: 10px;
+  border-radius: 50px;
+  border: none;
+
+  cursor: pointer;
+}
+.login.submit{
+  background-color: #5568d3;
+}
+.login.reg{
+  background-color: #55d3ad;
+}
+.login.cancel{
+  background-color: #da5f5f;
+}
+/*****************reg************************/
+
+
+.registrate{
+  float: center;
+  color: #e7cbf3;
+  text-align: center;
+  padding: 5px;
+  text-decoration:none;
+  font-size: 10px;
+  border-radius: 50px;
+  border: none;
+
+  cursor: pointer;
+}
+.registrate.reg{
+  background-color: #7755d3;
+}
+.registrate.cancel{
+  background-color: #da5f5f;
+}
 
 
 
