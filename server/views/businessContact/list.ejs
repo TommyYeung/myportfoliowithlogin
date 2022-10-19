@@ -1,0 +1,68 @@
+
+ <!--
+  File name: list.ejs
+   Student’s Name: Pok Hei Yeung
+   StudentID: 301240885
+   Date: 16/10/2022
+ -->
+
+
+
+
+
+<%- include ../partials/header.ejs %>
+
+
+  
+<div class="content">
+
+
+
+        <div>
+            <h1><%= title %></h1>
+            <a href="/contact-list/add" class="listhead add">
+             (+) Add a New Contact</a>
+            <br>
+            <table>
+                <tr class="listhead">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+
+                <!-- foreach loop to loop everything out -->
+
+                <% for(let count = 0; count < ContactList.length; count++) { %>
+                    <tr class="listloop">
+                        <td><%= ContactList[count].firstname %></td>
+                        <td><%= ContactList[count].lastname %></td>
+                        <td><%= ContactList[count].email %></td>
+                       
+                        <td><%= ContactList[count].phone %></td>
+                        <td class="edit">
+                            <a href="/contact-list/edit/<%= ContactList[count]._id %>">
+                             Edit</a>
+                        </td>
+                        <td class="del">
+                            <a href="/contact-list/delete/<%= ContactList[count]._id %>">
+                             Delete</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+
+
+  </div>
+  
+
+<%- include ../partials/footer.ejs %>
+  
+
+
+
+
+

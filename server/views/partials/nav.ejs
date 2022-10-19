@@ -1,0 +1,33 @@
+
+ <!--
+  File name: nav.ejs
+   Student’s Name: Pok Hei Yeung
+   StudentID: 301240885
+   Date: 28/09/2022
+ -->
+<!--partials for nav-->
+<nav>
+   
+    <a href="/" class="logo"><img src="../../Assets/images/logo3.png" width="70px"></a>
+    <a href="/" class="navigation">Home</a>
+    <a href="/aboutMe"class="navigation">AboutMe</a>
+    <a href="/service"class="navigation">Service</a>
+    <a href="/project"class="navigation">Project</a>
+    <a href="/contactMe"class="navigation">ContactMe</a>
+    <a href="/contact-list"class="navigation">Business Contacts</a>
+    
+
+
+<% if(typeof displayName == 'string' && displayName) { %>
+ 
+  <a href="/logout"class="navigation">Logout</a>
+<% } else { %>
+  
+  <a href="/login"class="navigation">login</a>
+<% } %>
+
+
+
+
+   
+</nav>

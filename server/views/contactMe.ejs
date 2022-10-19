@@ -1,0 +1,85 @@
+
+ <!--
+  File name: contactMe.ejs
+   Student’s Name: Pok Hei Yeung
+   StudentID: 301240885
+   Date: 28/09/2022
+ -->
+
+
+
+
+ <%- include partials/header.ejs %>
+
+
+<body>
+    <div class="content">
+
+    
+    <h1>Contact Me</h1>
+    <p>If you have any inqueries, feel free to reach out!
+        </p>
+        <p>Email Address: pyeung@my.centennialcollege.ca</p>
+    <div>
+        <form class="form" method="POST" action="/">
+    
+        <p><label >Frist name:</label>
+            <input type="text" id="fn" name="fname" placeholder="First name" required></p>
+        
+            <p><label>Last name:</label>
+            <input type="text" id="ln" name="lname" placeholder="Last name"required></p>
+        
+            <p><label>Gender:</label>
+            <select name="gender" id="gen"required>
+                <option value="Male" id="male" selected>Male</option>
+                <option value="Female" id="female">Female</option>   
+            </select>
+
+            <p><label>Address:</label>
+                <input type="text" id="addr" name="address" placeholder="Address"required></p>
+
+            <p><label>City:</label>
+                <input type="text" id="ci" name="city" placeholder="City"required></p>
+
+
+        <p><label>Phone number:</label>
+            <input type="tel" id="phoneNumber" name="phone" placeholder="1234567890" minlength="10" maxlength="10" required></p>
+            
+        <p><label>Date:</label>
+            <input type="date" id="d" name="date" required></p>
+
+        <p><labe>Postal code:</label>
+            <input type="text" id="postal" name="postalCode" pattern="[a-zA-Z]{1}[1-9]{1}[a-zA-Z]{1}[1-9]{1}[a-zA-Z]{1}[1-9]{1}" placeholder="A1A1A1"required></p>
+    
+        <p><label>Province:</label>
+            <select name="province" id="prov" required>
+                <option value="Alberta">Alberta</option>
+                <option value="British Columbia">British Columbia</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="New Brunswick">New Brunswick</option>
+                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                <option value="Nova Scotia">Nova Scotia</option>
+                <option value="Ontario" selected>Ontario</option>
+                <option value="Prince Edward Island">Prince Edward Island</option>
+                <option value="Quebec">Quebec</option>
+                <option value="Saskatchewan">Saskatchewan</option>
+            </select>
+
+        <p><label>Age:</label>
+            <input type="number" id="age" name="" placeholder="Age"  required></p>
+
+
+        <p><label>Email:</label>
+            <input type="email" id="email" name="email" placeholder="sample@sample.com" onkeyup="validateEmail()" required></p>     
+            
+    
+            <p><input onclick="redirect()" type="submit" id="mySubmit" value="Submit" >
+            <button onclick="reset()">Reset</button>
+            </p>
+       
+     </form>
+    
+    </div>
+</body>
+
+<%- include partials/footer.ejs %>

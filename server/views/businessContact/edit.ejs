@@ -1,0 +1,81 @@
+
+ <!--
+  File name: edit.ejs
+   Student’s Name: Pok Hei Yeung
+   StudentID: 301240885
+   Date: 16/10/2022
+ -->
+
+
+<%- include ../partials/header.ejs %>
+
+
+
+<!-- edit individual contact-->
+<div class="content">
+
+
+    <div>
+        <div>
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+
+
+
+                <p>
+                    <label for="nameTextField">First Name</label>
+                    <input type="text"
+                    placeholder="Change the First Name"
+                    name="firstname" 
+                    value="<%= editContact.firstname %>"
+                    required>
+                </p>
+
+                <p>
+                    <label for="authorTextField">Last Name</label>
+                    <input type="text"
+                    placeholder="Change the Last Name"
+                    name="lastname" 
+                    value="<%= editContact.lastname %>"
+                    required>
+                </p>
+
+                <p>
+                    <label for="publishedTextField">Email</label>
+                    <input type="text"
+                    placeholder="Change the Email"
+                    name="email" 
+                    value="<%= editContact.email %>"
+                    required>
+                </p>
+
+                <p>
+                    <label for="descriptionTextArea">Phone Number</label>
+                    <input type="text"
+                    placeholder="Change the Phone Number"
+                    name="phone" 
+                    value="<%= editContact.phone %>"
+                    required>
+                    
+                    </textarea>
+                </p>
+
+                
+
+                <button class="edit confirm" type="submit">
+                    confirm</button>
+                
+                    <a href="/contact-list" class="edit cancel">
+                    Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<%- include ../partials/footer.ejs %>

@@ -1,0 +1,76 @@
+
+ <!--
+  File name: add.ejs
+   Student’s Name: Pok Hei Yeung
+   StudentID: 301240885
+   Date: 16/10/2022
+ -->
+
+
+<%- include ../partials/header.ejs %>
+
+
+
+<!--add new contact -->
+
+<div class="content">
+
+<div class="">
+    <div class="">
+        <div class="">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+
+
+          
+                <p><label for="nameTextField">First Name: </label>
+                    <input type="text" class=""
+                    id="nameTextField"
+                    placeholder="Enter your First Name"
+                    name="firstname" required></p>
+                    
+               
+
+                <p><label for="authorTextField">Last Name</label>
+                    <input type="text" class=""
+                    id="authorTextField"
+                    placeholder="Enter your Last Name"
+                    name="lastname" required></p>
+                    
+                
+
+                <p><label for="publishedTextField">Email</label>
+                    <input type="text" class=""
+                    id="publishedTextField"
+                    placeholder="Enter your Email"
+                    name="email" required></p>
+                    
+                
+
+                <p><label for="descriptionTextArea">Phone Number</label>
+                    <input type="text" class=""
+                    id="descriptionTextArea"
+                    placeholder="Enter your Phone Number"
+                    name="phone" required></textarea></p>
+                    
+                
+
+                
+
+                <button class="add submit" type="submit">
+                    Submit</button>
+                
+                    <a href="/contact-list" class="add cancel">
+                    Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
+<%- include ../partials/footer.ejs %>

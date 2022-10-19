@@ -1,0 +1,77 @@
+
+ <!--
+  File name: login.ejs
+   Student’s Name: Pok Hei Yeung
+   StudentID: 301240885
+   Date: 18/10/2022
+ -->
+
+
+
+ <%- include ../partials/header.ejs %>
+
+ <body>
+    <div class="content">
+
+    <% if(messages.length>0){%>
+        <div class="alert">
+            <%= messages%>  
+        </div>
+    <%}%>
+
+    <h1><%= title %></h1>
+
+    <form class="form" method="POST">
+
+
+  
+        <p><label>Username: </label>
+            <input type="text" 
+            placeholder="Username"
+            name="username" required></p>
+        <p><label>Password: </label>
+            <input type="password" 
+            placeholder="Password"
+            name="password" required></p>
+            
+        
+
+        
+
+        <button class="login submit" type="submit">
+            Login</button>
+        
+            <a href="/registration" class="login reg">
+            Registration</a>
+            <a href="/users" class="login cancel">
+            Cancel</a>
+
+    </form>
+
+    </div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <%- include ../partials/footer.ejs %>
