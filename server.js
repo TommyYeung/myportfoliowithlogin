@@ -7,13 +7,13 @@
 
 
 
-let indexRouter = require('./server/routes/index.server.router.js');
-let contactRouter = require('./server/routes/contact.server.router');
+//let indexRouter = require('./server/routes/index.server.router.js');
+//let contactRouter = require('./server/routes/contact.server.router');
 
 const app = require('./server/config/app');
 
-app.use('/', indexRouter);
-app.use('/contact-list', contactRouter);
+//app.use('/', indexRouter);
+//app.use('/contact-list', contactRouter);
 
 var HOST = 'localhost'
 const port = (process.env.PORT || '3000');
