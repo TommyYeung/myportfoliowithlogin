@@ -174,10 +174,12 @@ form{
 
 /*edit and del btn with transparent background*/
 .listloop td.edit {
-    background-color:#00000000;
+    background-color:#0026ff42;
+    border-radius: 50px;
 }
 .listloop td.del {
-    background-color:#00000000;
+    background-color:#ff000042;
+    border-radius: 50px;
 }
 /*edit and del with red and blue colour*/
 .listloop td.edit a {
@@ -192,7 +194,7 @@ form{
     text-align: center;
     padding: 3px;
     text-decoration:none;
-    font-size: 10px;
+    font-size: 15px;
     border-radius: 10px;
     background-color: #c175df; 
 }
@@ -298,6 +300,27 @@ form{
   background-color: #da5f5f;
 }
 
-
-
-
+/****************Display name********************/
+.hi{
+  float: center;
+  color: #5800a0;
+  text-align: center;
+ 
+  text-decoration:none;
+  background-color: #ff5e007e;
+  border-radius: 50px;
+}
+.hi.logined{
+  background-color: #ecc5fb98;
+  animation-name: logined;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes logined {
+  0%  {background-color: #FAF4B798;}
+  25%  {background-color: #CDF0EA98;}
+  50%  {background-color: #ECC5FB98;}
+  75%  {background-color: #CDF0EA98;}
+  100% {background-color: #FAF4B798;}
+}

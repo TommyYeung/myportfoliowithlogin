@@ -15,6 +15,13 @@
     <header>
       <%- include nav.ejs %>
     </header>
+    <!--Display displayname base on login or not-->
+           
+      <%if(typeof displayName=='string'&&displayName){%>
+        <h1 class="hi logined"> Hi!! <%=displayName%></h1>
+      <%}else{%>
+        <h1 class="hi">Hi! Random nice people</h1>
+      <%}%>
     
 <link rel='stylesheet' href='/Content/style.css' />
 
