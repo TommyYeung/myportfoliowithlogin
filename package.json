@@ -35,4 +35,6 @@
     "@types/passport-local": "^1.0.34",
     "@types/passport-local-mongoose": "^6.1.1"
   }
+
 }
+

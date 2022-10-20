@@ -9,6 +9,6 @@
 //uri for mongo create database
 module.exports = 
 {   "sessionSecret": 'developmentSessionSecret',
-    "URI": "mongodb://localhost/business-contact",
+    "URI": "mongodb://localhost/business-contact" || "mongodb+srv://tommyyeung612:mongodbmongodb@webassignment2databases.cn6l4vf.mongodb.net/business-contact?retryWrites=true&w=majority"
     
 }
