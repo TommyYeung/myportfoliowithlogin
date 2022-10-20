@@ -22,9 +22,12 @@ module.exports.displayContactList = (req, res, next) => {
         }
         else
         {
-          
-
-            res.render('businessContact/list', {title: 'Business Contact List', ContactList: contactList, displayName: req.user ? req.user.displayName:'' });      
+          //sort aphabetically
+          //contactList.sort((a, b) => a.firstname-(b.firstname))
+            contactList.sort((a, b) => a.firstname.localeCompare(b.firstname))
+            res.render('businessContact/list', 
+            {title: 'Business Contact List', ContactList: contactList, 
+            displayName: req.user ? req.user.displayName:'' });      
         }
     });
 }

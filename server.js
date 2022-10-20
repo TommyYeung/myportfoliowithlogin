@@ -1,69 +1,23 @@
-#!/usr/bin/env node
 
-
-// Module dependencies.
-
-
-var app = require('./server/config/app');
-
-var http = require('http');
-
-
-//Get port from environment and store in Express.
-
-
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
-
-
-// Create HTTP server.
-
-
-var server = http.createServer(app);
-
-
-// Listen on provided port, on all network interfaces.
-
-
-server.listen(port);
-//server.on('error', onError);
-server.on('listening', onListening);
-
-
-//Normalize a port into a number, string, or false.
-
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
-
-
-// Event listener for HTTP server "listening" event.
-
-
-function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-
-}
+//File name: server.js
+//Student’s Name: Pok Hei Yeung
+//StudentID: 301240885
+//Date: 15/10/2022
 
 
 
-
+/*
+let indexRouter = require('./server/routes/index.server.router.js');
+let contactRouter = require('./server/routes/contact.server.router');
+*/
+const app = require('./server/config/app');
+/*
+app.use('/', indexRouter);
+app.use('/contact-list', contactRouter);
+*/
+var HOST = 'localhost'
+const PORT = (process.env.PORT || '3000');
+app.listen(PORT, console.log(`Server running at http://${HOST}:${PORT}/`));
 
 
 

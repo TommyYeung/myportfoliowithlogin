@@ -302,12 +302,15 @@ form{
 
 /****************Display name********************/
 .hi{
+  position: static;
+  left: 500px;
+  padding: 20px;
+  font-size: 100;
   float: center;
   color: #5800a0;
   text-align: center;
- 
   text-decoration:none;
-  background-color: #ff5e007e;
+  background-color: #ffa6004f;
   border-radius: 50px;
 }
 .hi.logined{
@@ -323,4 +326,19 @@ form{
   50%  {background-color: #ECC5FB98;}
   75%  {background-color: #CDF0EA98;}
   100% {background-color: #FAF4B798;}
+}
+
+/************************Alert*******************************/
+.alert{
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #ff00004b;
+  animation-name: alert;
+  animation-duration: 0.5s;
+  animation-iteration-count: 2;  
+  animation-timing-function: ease-in-out;
+}
+@keyframes alert {
+  0%  {background-color: #ff000018;}
+  50% {background-color: #ff000080;}
 }

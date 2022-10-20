@@ -30,7 +30,7 @@
             
             <table>
                 <tr class="listhead">
-                    <th>First Name</th>
+                    <th colspan="2">First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Phone Number</th>
@@ -47,6 +47,7 @@
 
                 <% for(let count = 0; count < ContactList.length; count++) { %>
                     <tr class="listloop">
+                        <td><%=count+1%>.</td>
                         <td><%= ContactList[count].firstname %></td>
                         <td><%= ContactList[count].lastname %></td>
                         <td><%= ContactList[count].email %></td>

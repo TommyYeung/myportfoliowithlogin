@@ -9,16 +9,15 @@
 
 
 
-// installed 3rd party packages
+//get packages
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
-let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
 
 
-// authentication,session
+// express authentication,session
 let session = require('express-session');
 let passport = require('passport');
 let passportJWT = require('passport-jwt');
@@ -29,14 +28,16 @@ let localStrategy = passportLocal.Strategy;
 let flash = require('connect-flash');
 
 
-
+//Router
+let indexRouter = require('../routes/index.server.router');
+let contactRouter = require('../routes/contact.server.router');
 
 
 // database setup
 let mongoose = require('mongoose');
 let DB = require('./development');
 
-// point mongoose to the DB URI
+// mongoose get URI
 mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 
@@ -46,8 +47,9 @@ mongoDB.once('open', ()=>{
   console.log('Connected to MongoDB...');
 });
 
-let indexRouter = require('../routes/index.server.router');
-let contactRouter = require('../routes/contact.server.router');
+
+
+
 
 let app = express();
 
@@ -55,12 +57,19 @@ let app = express();
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs'); // express  -e
 
+
+//morgan
 app.use(logger('dev'));
+
+
+//json
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
+//static stuff
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
+
 
 
 //setup express session
@@ -70,7 +79,7 @@ app.use(session({
   resave: false
 }));
 
-//  flash for msg
+//  flash for saving the msg
 app.use(flash());
 
 // use passport
@@ -79,14 +88,14 @@ app.use(passport.session());
 
 // passport user configuration
 
-// create a User Model Instance
+// Get the users mongo schema
 let userModel = require('../models/users.server.model');
 let usersModel = userModel.usersModel;
 
-// implement a User Authentication Strategy
+// implement Authentication Strategy
 passport.use(usersModel.createStrategy());
 
-// serialize and deserialize the User info
+// serialize and deserialize all User info like login and reg
 passport.serializeUser(usersModel.serializeUser());
 passport.deserializeUser(usersModel.deserializeUser());
 
@@ -108,23 +117,7 @@ passport.use(strategy);
 
 // routing
 app.use('/', indexRouter);
-//app.use('/users', usersRouter);
 app.use('/contact-list', contactRouter);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error', { title: 'Error', displayName: req.user ? req.user.displayName : '' });
-});
 
 module.exports = app;

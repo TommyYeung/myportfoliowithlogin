@@ -6,7 +6,7 @@
 
 
 
-
+//uri for mongo create database
 module.exports = 
 {   "sessionSecret": 'developmentSessionSecret',
     "URI": "mongodb://localhost/business-contact",
